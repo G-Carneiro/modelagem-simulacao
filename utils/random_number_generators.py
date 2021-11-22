@@ -51,6 +51,18 @@ def iterative_multiplicative_lcg(sequence_number: int,
     return random_table
 
 
+def search_period_lcg(random_table: List[Tuple[int, float]]) -> int:
+    aux_table: List[int] = []
+    for number, _ in random_table:
+        aux_table.append(number)
+
+    for i in range(len(aux_table)):
+        if aux_table[i] in aux_table[:i]:
+            return i
+
+    return len(aux_table)
+
+
 # TODO: confirmar se está correto
 def schrage(seed: int,
             multiplier: int,
