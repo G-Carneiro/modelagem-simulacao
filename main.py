@@ -1,4 +1,5 @@
 from utils.random_number_generators import *
+from utils.MultiplicativeLCG import MultiplicativeLCG
 
 sequence_number: int = 30
 seed: int = 13
@@ -24,3 +25,8 @@ table: List[Tuple[int, float]] = iterative_multiplicative_lcg(sequence_number=se
 
 print(*table)
 print(search_period_lcg(table))
+
+test = MultiplicativeLCG(seed=seed, multiplier=multiplier,
+                         module=module, increment=increment)
+print(test.get_random_number(30))
+print(test.get_period())
