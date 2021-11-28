@@ -3,7 +3,7 @@ from utils.MultiplicativeLCG import MultiplicativeLCG
 from utils.random_variables import *
 
 sequence_number: int = 30
-seed: int = 13
+seed: int = 23
 multiplier: int = 17
 increment: int = 43
 module: int = 100
@@ -25,4 +25,4 @@ module: int = 100
 #                                                               increment=increment)
 
 generator = MultiplicativeLCG(seed=seed, multiplier=multiplier, module=module, increment=increment)
-print(poisson(lamda_=0.2, generator=generator))
+print(normal(average=10, deviation=2, random_number1=0.1758, random_number2=0.1489))
