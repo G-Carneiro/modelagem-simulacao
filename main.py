@@ -1,5 +1,6 @@
 from utils.random_number_generators import *
 from utils.MultiplicativeLCG import MultiplicativeLCG
+from utils.random_variables import *
 
 sequence_number: int = 30
 seed: int = 13
@@ -7,26 +8,21 @@ multiplier: int = 17
 increment: int = 43
 module: int = 100
 
-print(f"0 - {seed}, {seed / module}")
-for i in range(1, sequence_number + 1):
-    num, random = multiplicative_lcg(sequence_number=i,
-                                     seed=seed,
-                                     multiplier=multiplier,
-                                     module=module,
-                                     increment=increment)
+# print(f"0 - {seed}, {seed / module}")
+# for i in range(1, sequence_number + 1):
+#     num, random = multiplicative_lcg(sequence_number=i,
+#                                      seed=seed,
+#                                      multiplier=multiplier,
+#                                      module=module,
+#                                      increment=increment)
+#
+#     print(f"{i} - {num}, {random}")
+#
+# table: List[Tuple[int, float]] = iterative_multiplicative_lcg(sequence_number=sequence_number,
+#                                                               seed=seed,
+#                                                               multiplier=multiplier,
+#                                                               module=module,
+#                                                               increment=increment)
 
-    print(f"{i} - {num}, {random}")
-
-table: List[Tuple[int, float]] = iterative_multiplicative_lcg(sequence_number=sequence_number,
-                                                              seed=seed,
-                                                              multiplier=multiplier,
-                                                              module=module,
-                                                              increment=increment)
-
-print(*table)
-print(search_period_lcg(table))
-
-test = MultiplicativeLCG(seed=seed, multiplier=multiplier,
-                         module=module, increment=increment)
-print(test.get_random_number(30))
-print(test.get_period())
+generator = MultiplicativeLCG(seed=seed, multiplier=multiplier, module=module, increment=increment)
+print(poisson(lamda_=0.2, generator=generator))
