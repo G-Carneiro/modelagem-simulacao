@@ -25,4 +25,4 @@ module: int = 100
 #                                                               increment=increment)
 
 generator = MultiplicativeLCG(seed=seed, multiplier=multiplier, module=module, increment=increment)
-print(normal(average=10, deviation=2, random_number1=0.1758, random_number2=0.1489))
+print(normal(mean=10, variance=2, random_number1=0.1758, random_number2=0.1489))

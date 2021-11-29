@@ -37,8 +37,8 @@ def exponential(lamda_: float, random_number: float) -> float:
     return (-lamda_ * log(1 - random_number))
 
 
-def normal(average: float,
-           deviation: float,
+def normal(mean: float,
+           variance: float,
            random_number1: float,
            random_number2: float
            ) -> Tuple[float, float]:
@@ -46,10 +46,14 @@ def normal(average: float,
     z2: float = sqrt(-2 * log(random_number1)) * sin(2 * pi * random_number2)
     print(z1, z2)
 
-    x1: float = average + deviation * z1
-    x2: float = average + deviation * z2
+    x1: float = mean + variance * z1
+    x2: float = mean + variance * z2
 
     return (x1, x2)
+
+
+def weibull(a: float, b: float, random_number: float) -> float:
+    return (b * (-log(1 - random_number)) ** (1 / a))
 
 
 
