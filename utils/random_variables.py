@@ -1,4 +1,4 @@
-from math import exp, sqrt, log, cos, sin, pi
+from math import exp, sqrt, log, cos, sin, pi, floor
 from typing import Tuple
 
 from .MultiplicativeLCG import MultiplicativeLCG
@@ -54,6 +54,17 @@ def normal(mean: float,
 
 def weibull(a: float, b: float, random_number: float) -> float:
     return (b * (-log(1 - random_number)) ** (1 / a))
+
+
+def log_logistic(a: float, b: float, random_number: float) -> float:
+    return (b * (random_number / (1 - random_number)) ** (1 / a))
+
+
+# Discrete Random Variates
+def discrete_uniform(i: int, j: int, random_number: float) -> int:
+    return (i + floor((j - i + 1) * random_number))
+
+
 
 
 
