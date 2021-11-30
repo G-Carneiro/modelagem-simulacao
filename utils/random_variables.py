@@ -42,9 +42,8 @@ def normal(mean: float,
            random_number1: float,
            random_number2: float
            ) -> Tuple[float, float]:
-    z1: float = sqrt(-2 * log(random_number1)) * cos(2 * pi * random_number2)
-    z2: float = sqrt(-2 * log(random_number1)) * sin(2 * pi * random_number2)
-    print(z1, z2)
+    z1: float = sqrt(-2 * log(1 - random_number1)) * cos(2 * pi * random_number2)
+    z2: float = sqrt(-2 * log(1 - random_number1)) * sin(2 * pi * random_number2)
 
     x1: float = mean + variance * z1
     x2: float = mean + variance * z2
