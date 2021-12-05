@@ -62,8 +62,3 @@ def log_logistic(a: float, b: float, random_number: float) -> float:
 # Discrete Random Variates
 def discrete_uniform(i: int, j: int, random_number: float) -> int:
     return (i + floor((j - i + 1) * random_number))
-
-
-
-
-
