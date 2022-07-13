@@ -1,5 +1,5 @@
-# INE5426 - Modelagem e Simulação
+# INE5425 - Modelagem e Simulação
 
 ---
 
-Arquivos úteis para a disciplina INE5426 - Modelagem e Simulação (UFSC).
+Arquivos úteis para a disciplina INE5425 - Modelagem e Simulação (UFSC).
